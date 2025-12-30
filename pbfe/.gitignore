@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data
+data/raw/*
+data/processed/*
+
+# Notebooks - outputs
+*.nbconvert.ipynb
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+
