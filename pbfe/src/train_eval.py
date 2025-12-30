@@ -418,25 +418,12 @@ def run_training_and_evaluation(
     if f1_B > f1_A:
         print(
             "\n[STEP 8] Interpretation:\n"
-            "- Model B, which has access to PBFE features (F1–F11), "
-            "delivers higher macro F1.\n"
-            "- This suggests that the pivot-based feature extraction is adding "
-            "useful cross-window / structural information beyond raw OHLC sequences.\n"
-            "- In particular, PBFE likely helps with:\n"
-            "  • separating trend-following vs mean-reverting regimes,\n"
-            "  • emphasising distances from recent pivots,\n"
-            "  • and capturing asymmetries that a pure sequence model may need "
-            "more capacity/data to learn from scratch."
+            "Model B outperforms Model A, which is a good sign that the PBFE features are adding value."
         )
     elif f1_B < f1_A:
         print(
             "\n[STEP 8] Interpretation:\n"
-            "- Model A (sequence only) outperforms Model B despite the extra PBFE features.\n"
-            "- Possible reasons:\n"
-            "  • PBFE features may be noisy / redundant for this asset universe,\n"
-            "  • or the tuned architecture for Model B is overfitting the feature branch.\n"
-            "- You might inspect feature importances by ablation (drop subsets of PBFE features) "
-            "or reduce feature dimensionality."
+            "Model A outperforms Model B, which is a good sign that the PBFE features are not adding value."
         )
     else:
         print(
